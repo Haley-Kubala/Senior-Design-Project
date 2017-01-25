@@ -90,6 +90,7 @@ Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 #define BOXSIZE 40
 #define PENRADIUS 3
 int oldcolor, currentcolor;
+boolean erasing;
 
 void setup(void) {
   Serial.begin(9600);
@@ -179,9 +180,9 @@ void loop()
     
     if (p.y < (TS_MINY-5)) {
       Serial.println("erase");
-      // press the bottom of the screen to erase 
+      // press the bottom of the screen to erase
       tft.fillRect(0, BOXSIZE, tft.width(), tft.height()-BOXSIZE, BLACK);
-    }
+    } else {
     // scale from 0->1023 to tft.width
     //p.x = map(p.x, TS_MINX, TS_MAXX, tft.width(), 0);
     p.x = tft.width() - map(p.x, TS_MINX, TS_MAXX, tft.width(), 0);
@@ -228,6 +229,7 @@ void loop()
     int y = p.y - BOXSIZE;
     if (((y-PENRADIUS) > BOXSIZE) && ((y+PENRADIUS) < tft.height())) {
       tft.fillCircle(x, y, PENRADIUS, currentcolor);
+    }
     }
   }
 }
