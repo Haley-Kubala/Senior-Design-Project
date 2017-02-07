@@ -40,4 +40,4 @@ nformation from the touch pad and send it to the pi
   B. make a connection to database
   C. reads through the database and finds a match for the ID
   D. it will incrememnt the password count and start a timer.
-(5)somehow something will trigger the timer to stop and then store the total time the student was gone.
+(5)somehow something will trigger the timer to stop and then store the total time the student was gone. 
