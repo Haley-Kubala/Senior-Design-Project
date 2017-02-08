@@ -7,10 +7,14 @@ client = MongoClient()
 db = client.test_database
 collection = db.test_collection
 
-studentDict = {}
 
 def fill_dict():
-    
+    studentDict = {}
+    #take text file as a parameter
+    #go through file, line by line, break on spaces and store
+    #each section as a variable
+    #add each part to the dictionary
+    #return dictionary
 
 parser = argparse.ArugmentParser()
 parser.add_argument("file", help="enter path to a text file")
