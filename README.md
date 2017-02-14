@@ -4,7 +4,7 @@ Our goal for the project is to create a small device that allows teachers
 to keep track of how long people use the hall pass, how often, as well as who
 uses the pass. Other features could be added if we have time to do so.
 
-Creators : Haley Kubala, Annie Williamson, David Roherbaugh
+Creators : Haley Kubala, Annie Williamson, David Rohrbaugh
 
 The Device utilizes an arduino, a raspberry pi, and a lcd touch screen.
 We will be 3D printing the case that contains all of the parts.
