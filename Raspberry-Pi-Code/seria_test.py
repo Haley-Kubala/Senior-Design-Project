@@ -7,3 +7,6 @@ while True:
 	s[0] = str(int (ser.readline(),16))
 	print s[0]
 	print read_serial
+	time.sleep(2)
+	ser.write(s[0])
+	time.sleep(0.05)
