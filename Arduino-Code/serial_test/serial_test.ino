@@ -13,6 +13,7 @@ void loop() {
     a++;                          // a value increase every loop
     sprintf(dataString,"%02X",a); // convert a value to hexa
     Serial.println(dataString);   // send the data
+    digitalWrite(13, LOW);
     sentData = true;
   }
   else {
