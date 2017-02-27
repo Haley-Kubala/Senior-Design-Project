@@ -5,9 +5,9 @@ student returns.
 '''
 import argparse
 
-leave_info_file = ('leave_info_file', 'w')
+leave_info_file = open('leave_info_file', 'w')
 
-leave_info_file.write('ID:',  '123')
+leave_info_file.write('ID: 123')
 
 
 parser = argparse.ArgumentParser()
