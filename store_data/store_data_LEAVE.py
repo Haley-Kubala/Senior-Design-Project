@@ -5,7 +5,7 @@ student returns.
 '''
 import argparse
 
-def main(args["START_TIME"], args["START_TIME"], args["END_TME"]):
+def main(args):
     leave_info_file = open('leave_info_file', 'w')
     leave_info_file.write(args["ID"], args["START_TIME"], args["END_TIME"])
 
