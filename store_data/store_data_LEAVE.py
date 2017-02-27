@@ -7,7 +7,7 @@ import argparse
 
 leave_info_file = open('leave_info_file', 'w')
 
-leave_info_file.write('ID: 123')
+leave_info_file.write(args["ID"], args["START_TIME"], args["END_TIME"])
 
 
 parser = argparse.ArgumentParser()
