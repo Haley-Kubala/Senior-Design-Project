@@ -7,7 +7,7 @@ import argparse
 
 leave_info_file = ('leave_info_file', 'w')
 
-f.write('ID: 123')
+leave_info_file.write('ID: 123')
 
 
 parser = argparse.ArgumentParser()
