@@ -7,7 +7,7 @@ import argparse
 
 def main(args):
     leave_info_file = open('leave_info_file', 'w')
-    leave_info_file.write("%s %s %s" % (args["ID"], args["START_TIME"], args["END_TIME"]))
+    leave_info_file.write("ID : %s Time out : %s Time in : %s" % (args["ID"], args["START_TIME"], args["END_TIME"]))
 
 
 if __name__ == "__main__":
