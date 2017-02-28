@@ -14,13 +14,9 @@ def main(args, datetime_string):
 
 def create_date():
     date_time = datetime.datetime.now().time
-    date_time.strftime("%m%d%y")
+    date_time.strptime("%m%d%y")
     return date_time
-    #date_time.strftime()
 
-'''maybe create a function that creates a dat time and formats it as
-    a string. put it in utils library and it can be called on the return script
-'''
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
