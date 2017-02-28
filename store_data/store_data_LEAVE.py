@@ -7,13 +7,14 @@ import argparse
 import datetime
 
 
-def main(args):
+def main(args, datetime_string):
     leave_info_file = open('leave_info_file', 'w')
-    leave_info_file.write("ID : %s"  % args["ID"])
+    leave_info_file.write("ID : %s , time out : %s "  % args["ID"], datetime_string)
 
 
 def create_date(args):
-    date_time = datetime.datetime.now().time()
+    date_time = datetime.datetime.now().time
+    date_time.strftime("%m%d%y")
     return date_time
     #date_time.strftime()
 
@@ -28,4 +29,4 @@ if __name__ == "__main__":
     args = vars(parser.parse_args())
     main(args)
 
-print create_date(args)
+datetime_string = create_date(args)
