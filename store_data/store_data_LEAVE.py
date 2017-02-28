@@ -12,7 +12,7 @@ def main(args, datetime_string):
     leave_info_file.write("ID : %s , time out : %s "  % args["ID"], datetime_string)
 
 
-def create_date(args):
+def create_date():
     date_time = datetime.datetime.now().time
     date_time.strftime("%m%d%y")
     return date_time
@@ -29,4 +29,4 @@ if __name__ == "__main__":
     args = vars(parser.parse_args())
     main(args)
 
-datetime_string = create_date(args)
+datetime_string = create_date()
