@@ -14,7 +14,7 @@ def main(args, datetime_string):
 
 
 def create_date():
-    date_time = datetime.datetime.now().time
+    date_time = datetime.datetime.now()
     date_time.strptime("%m%d%y")
     return date_time
 
