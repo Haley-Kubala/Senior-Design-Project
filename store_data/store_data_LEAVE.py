@@ -9,7 +9,7 @@ import datetime
 
 def main(args):
     leave_info_file = open('leave_info_file', 'w')
-    leave_info_file.write("ID : %s Time out : %s" % (args["ID"], args["START_TIME"]))
+    leave_info_file.write("ID : %s"  % args["ID"])
 
 
 def create_date(args):
