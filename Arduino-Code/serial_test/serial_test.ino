@@ -25,7 +25,7 @@ void setup() {
     }
   }
   
-  delay(1000);
+  /*delay(1000);
   
   while (!ArduinoGotData) {
     if (Serial.available()) {
@@ -34,7 +34,7 @@ void setup() {
     }
   }
   
-  if (inString
+  if (inString*/
 }
 
 void loop() {}
