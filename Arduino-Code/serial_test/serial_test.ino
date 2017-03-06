@@ -1,12 +1,21 @@
-char dataString[50] = {0};
+char sending[50] = "Sending data...";
+char test[50] = "test";
 //int a = 0; 
 
 void setup() {
   Serial.begin(9600);              //Starting serial communication
+  pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
   
   delay(1000);
   
-  Serial.println("Sending data...");
+  Serial.println(sending);
+  
+  delay(1000);
+  
+  Serial.println(test);
+  
+  digitalWrite(13, HIGH);
 }
   
 void loop() {
