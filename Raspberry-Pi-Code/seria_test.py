@@ -1,9 +1,10 @@
 import serial
 
 ser = serial.Serial('/dev/ttyACM0',9600)
-s = [0]
+s = ['0']
 while True:
 	read_serial=ser.readline()
-	s[0] = str(int (ser.readline(),16))
-	print s[0]
+	if (read_serial == "test"):
+		a = 0
+		# send back confirmation here
 	print read_serial
