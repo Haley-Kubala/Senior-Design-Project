@@ -1,5 +1,5 @@
 char sending[50] = "Sending data...";
-char test[50] = "test";
+char test[50] = "77777";
 //int a = 0; 
 
 void setup() {
