@@ -1,0 +1,12 @@
+import re
+def check_string():
+    id = raw_input("Enter ID")
+
+    #opening the file using `with` context manager, bc it'll automatically close the file for you apparently
+    with open('file.txt', 'r') as searchfile:
+    for line in searchfile:
+        if id in line:
+            print "ID APPROVED"
+
+        else
+            print "ID UNKNOWN, TRY AGAIN"
