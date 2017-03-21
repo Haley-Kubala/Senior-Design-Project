@@ -2,6 +2,7 @@
 This script will take the initial data when the student leaves
 and store it in a text file so we can access it later when the
 student returns.
+Questions? how will it write to a file if already exists?
 '''
 import argparse
 import datetime
@@ -10,8 +11,8 @@ import time
 
 def main(args):
     date_time = datetime.datetime.now()
-    leave_info_file = open('leave_info_file', 'w')
-    leave_info_file.write("ID : %s , time out : %s "  % (args["ID"], date_time))
+    with open('leave_info_file', 'w') as leave_file:
+        leave_info_file.write(" %s , %s "  % (args["ID"], date_time))
 
 
 
