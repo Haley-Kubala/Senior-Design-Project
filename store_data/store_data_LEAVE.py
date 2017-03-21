@@ -11,7 +11,7 @@ import time
 def main(args):
     date_time = datetime.datetime.now()
     leave_info_file = open('leave_info_file', 'w')
-    leave_info_file.write("ID : %s , time out : %s "  % (args["ID"], datetime_string))
+    leave_info_file.write("ID : %s , time out : %s "  % (args["ID"], date_time))
 
 
 
