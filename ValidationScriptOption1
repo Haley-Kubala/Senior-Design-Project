@@ -1,9 +1,0 @@
-def check():
-        datafile = file('studentID.txt')
-        for line in datafile:
-            if enteredID in line:
-                return True
-        return False #because you finished the search without finding anything
-
-
-print check()
