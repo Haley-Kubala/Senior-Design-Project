@@ -20,6 +20,5 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID needs to be entered")
-    #parser.add_argument("START_TIME", help="beginning time stamp")
     args = vars(parser.parse_args())
     main(args)
