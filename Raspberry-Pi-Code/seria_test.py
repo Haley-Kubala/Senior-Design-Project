@@ -17,10 +17,11 @@ def main():
 		elif (status == c and validateID(read_serial)):
 			print read_serial + " is a valid ID\n"
 			# send back confirmation here
-			#ser.write(stuff)
+			ser.write("1")
 			status = r
 		elif (status == c):
 			print read_serial + " is not a valid ID\n"
+			ser.write("0");
 			status = r
 
 def validateID(idToValidate):

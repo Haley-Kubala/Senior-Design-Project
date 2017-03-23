@@ -1,5 +1,7 @@
 char sending[50] = "Sending data...";
 char test[50] = "77778";
+char test2[50] = "77777";
+char input[50];
 //int a = 0; 
 
 void setup() {
@@ -15,12 +17,29 @@ void setup() {
   
   Serial.println(test);
   
-  digitalWrite(13, HIGH);
+  delay(1000);
+  
+  Serial.println(sending);
+  
+  delay(1000);
+  
+  Serial.println(test2);
+  
+  delay(1000);
 }
   
 void loop() {
-  /*a++;                          // a value increase every loop
-  sprintf(dataString,"%02X",a); // convert a value to hexa 
-  Serial.println(dataString);   // send the data
-  delay(1000);                  // give the loop some break */
+  if (Serial.available() > 0) {
+    input = Serial.read();
+    Serial.println(input);
+    
+    if (input.equals("48")) { // 48 is ASCII for 0 (zero)
+      digitalWrite(13, LOW);
+    }
+    
+    if (input.equals("49")) { // 49 is ASCII for 1 (one)
+      digitalWrite(13, HIGH);
+    }      
+  }
+  delay(1000);
 }
