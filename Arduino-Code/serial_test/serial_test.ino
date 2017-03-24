@@ -1,37 +1,45 @@
-char sending[50] = "Sending data...";
-char test[50] = "77778";
-char test2[50] = "77777";
-int input;
-//int a = 0; 
+char sending[16] = "Sending data...";
+int input; 
+
+// test variables
+char start[12] = "---start---";
+char ending[12] = "----end----";
+char test[6] = "77778";
+char test2[6] = "77777";
+int wait = 100;
 
 void setup() {
   Serial.begin(9600);
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
   
-  delay(100);
+  delay(wait);
   
-  Serial.println("---start---\n");
+  Serial.println(start);
   
-  delay(100);
+  delay(wait);
   
   Serial.println(sending);
   
-  delay(100);
+  delay(wait);
   
   Serial.println(test);
   
-  delay(100);
+  delay(wait);
   
   Serial.println(sending);
   
-  delay(100);
+  delay(wait);
   
   Serial.println(test2);
   
-  delay(100);
+  delay(wait);
   
-  Serial.println("---end---");
+  Serial.println(ending);
+  
+  delay(wait);
+  
+  Serial.println("spam");
 }
   
 void loop() {
