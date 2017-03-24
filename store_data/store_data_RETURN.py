@@ -11,7 +11,5 @@ import time
 #def main(args):
 end_date_time = datetime.datetime.now()
 with open('leave_info_file') as leave_info_file:
-    ID_start_date_time = leave_info_file.read()
-    print ID_start_date_time
-    #open leave_info_file
-    #read ID and start_date_time then store them as variables
+    ID_leave_time_stamp = leave_info_file.read()
+    print type ID_leave_time_stamp
