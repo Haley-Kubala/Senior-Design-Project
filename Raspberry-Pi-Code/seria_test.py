@@ -1,6 +1,7 @@
 import serial
+import time
 
-MESSAGES = ("---start---", "----end----", "Sending data...", "77778", "77777")
+MESSAGES = ("---start---", "----end----", "sending data...", "77778", "77777")
 
 def main():
 
@@ -10,18 +11,20 @@ def main():
 
 	ser = serial.Serial('/dev/ttyACM0',9600)
 	
+	ser.readline()
+	
 	while True:
 		read_serial=ser.readline()[:-2]
 		if (read_serial in MESSAGES):
-			if (status == r and read_serial == "Sending data..."):
+			if (status == r and read_serial == "sending data..."):
 				print read_serial
 				status = c
 			elif (status == c and validateID(read_serial)):
-				print read_serial + " is a valid ID\n"
+				print read_serial + " is a valid ID"
 				ser.write("1")
 				status = r
 			elif (status == c and not validateID(read_serial)):
-				print read_serial + " is not a valid ID\n"
+				print read_serial + " is not a valid ID"
 				ser.write("0");
 				status = r
 			else:
