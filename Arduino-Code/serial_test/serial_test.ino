@@ -6,12 +6,19 @@ char start[12] = "---start---";
 char ending[12] = "----end----";
 char test[6] = "77778";
 char test2[6] = "77777";
-int wait = 100;
+int wait = 0;
 
 void setup() {
   Serial.begin(9600);
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
+  
+  delay(1000);
+  
+  // Pi code reads first line and does nothing
+  // because first line might be corrupted.
+  // Subsequent writes are fine either way
+  Serial.println("ignore");
   
   delay(wait);
   
