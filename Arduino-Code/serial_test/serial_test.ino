@@ -1,13 +1,66 @@
-char dataString[50] = {0};
-int a =0; 
+char sending[16] = "sending data...";
+int input; 
+
+// test variables
+char start[12] = "---start---";
+char ending[12] = "----end----";
+char test[6] = "77778";
+char test2[6] = "77777";
+int wait = 0;
 
 void setup() {
-Serial.begin(9600);              //Starting serial communication
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
+  
+  delay(1000);
+  
+  // Pi code reads first line and does nothing
+  // because first line might be corrupted.
+  // Subsequent writes are fine either way
+  Serial.println("ignore");
+  
+  delay(wait);
+  
+  Serial.println(start);
+  
+  delay(wait);
+  
+  Serial.println(sending);
+  
+  delay(wait);
+  
+  Serial.println(test);
+  
+  delay(wait);
+  
+  Serial.println(sending);
+  
+  delay(wait);
+  
+  Serial.println(test2);
+  
+  delay(wait);
+  
+  Serial.println(ending);
+  
+  delay(wait);
+  
+  Serial.println("spam");
 }
   
 void loop() {
-  a++;                          // a value increase every loop
-  sprintf(dataString,"%02X",a); // convert a value to hexa 
-  Serial.println(dataString);   // send the data
-  delay(1000);                  // give the loop some break
+  if (Serial.available() > 0) {
+    input = Serial.read();
+    //Serial.println(input);
+    
+    if (input == 48) { // 48 is ASCII for 0 (zero)
+      digitalWrite(13, LOW);
+    }
+    
+    if (input == 49) { // 49 is ASCII for 1 (one)
+      digitalWrite(13, HIGH);
+    }      
+  }
+  delay(100);
 }
