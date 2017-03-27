@@ -1,4 +1,4 @@
-char sending[16] = "Sending data...";
+char sending[16] = "sending data...";
 int input; 
 
 // test variables
