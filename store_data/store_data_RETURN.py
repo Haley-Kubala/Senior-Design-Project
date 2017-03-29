@@ -6,7 +6,6 @@ import argparse
 import datetime
 from datetime import date
 import time
-from pymongo import MongoClient
 
 end_date_time = datetime.datetime.now()
 print end_date_time
