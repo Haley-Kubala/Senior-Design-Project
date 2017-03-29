@@ -17,5 +17,7 @@ with open('leave_info_file') as leave_info_file:
     print info_list
     ID = info_list[1]
     date = info_list[2]
+    time = info_list[3]
     print ID
     print date
+    print time
