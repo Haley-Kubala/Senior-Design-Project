@@ -13,7 +13,7 @@ end_date_time = datetime.datetime.now()
 with open('leave_info_file') as leave_info_file:
     ID_leave_time_stamp = leave_info_file.read()
     print type(ID_leave_time_stamp)
-    info_list = ID_leave_time_stamp.split(" ", 0)
+    info_list = ID_leave_time_stamp.split(" ")
     print info_list
     ID = info_list[1]
     date = info_list[2]
