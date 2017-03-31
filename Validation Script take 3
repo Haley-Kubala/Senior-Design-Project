@@ -1,6 +1,5 @@
 import re
-def validate_id():
-    id = raw_input("Enter ID")
+def validate_id(id):
 
     #opening the file using `with` context manager, bc it'll automatically close the file for you apparently
     with open('file.txt', 'r') as searchfile:
