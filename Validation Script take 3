@@ -1,5 +1,5 @@
 import re
-def check_string():
+def validate_id():
     id = raw_input("Enter ID")
 
     #opening the file using `with` context manager, bc it'll automatically close the file for you apparently
