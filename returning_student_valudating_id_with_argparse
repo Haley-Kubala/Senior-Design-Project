@@ -1,0 +1,31 @@
+returningstudent.py
+
+import re
+import argparse
+#def returning_student_validate_id(id):
+
+    #opening the file using `with` context manager, bc it'll automatically close the file for you apparently
+    #with open('file.txt', 'r') as searchfile:
+    #for line in searchfile:
+    #    if id in line:
+    #        print "ID APPROVED"
+    #        return id
+
+    #    else
+    #        print "ID UNKNOWN, TRY AGAIN"
+         # run again?
+def main(args):
+        with open('file.txt', 'r') as searchfile:
+        for line in searchfile:
+            if id in line:
+                print "ID APPROVED"
+                return id
+
+            else
+                print "ID UNKNOWN, TRY AGAIN"
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("ID", help="student ID must match the one in the file")
+    args = vars(parser.parse_args())
+    main(args)
