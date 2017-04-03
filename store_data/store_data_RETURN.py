@@ -6,15 +6,16 @@ import argparse
 import datetime
 from datetime import date
 import time
-import collections
-import mongodb
-import pymongo
-from pymongo import MongoClient
+#import collections
+#import mongodb
+#import pymongo
+#from pymongo import MongoClient
 
 
 def main(args):
     end_date_time = datetime.datetime.now()
     print args
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
