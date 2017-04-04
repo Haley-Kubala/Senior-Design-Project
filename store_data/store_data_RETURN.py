@@ -20,7 +20,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID needs to be entered")
-    parser.add_argument("beginning_timestamp", help="")
+    parser.add_argument("beginning_timestamp", help="taken from annies script")
     args = vars(parser.parse_args())
     main(args)
 
