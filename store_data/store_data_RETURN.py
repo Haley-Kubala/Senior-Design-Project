@@ -5,7 +5,6 @@
 import argparse
 import datetime
 from datetime import date
-import time
 #import collections
 #import mongodb
 #import pymongo
