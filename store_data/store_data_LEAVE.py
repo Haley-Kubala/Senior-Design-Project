@@ -7,7 +7,6 @@ Questions? how will it write to a file if already exists?
 import argparse
 import datetime
 from datetime import date
-import time
 
 def main(args):
     start_date_time = datetime.datetime.now()
