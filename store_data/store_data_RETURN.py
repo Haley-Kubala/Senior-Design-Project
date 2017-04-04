@@ -14,8 +14,11 @@ import time
 
 def main(args):
     end_date_time = datetime.datetime.now()
-    print args
-
+    ID = args["ID"]
+    beginning_timestamp = args["beginning_timestamp"]
+    print end_date_time
+    print ID
+    print beginning_timestamp
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
