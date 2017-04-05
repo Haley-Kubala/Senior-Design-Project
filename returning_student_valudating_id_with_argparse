@@ -15,7 +15,6 @@ def get_id_and_time(file):
         #return ID, time_stamp
         
 def validate_returning_id(file):
-    with open('file.txt', 'r') as searchfile:
     for ID in searchfile:
         if ID == args:
             return "VALID ID"
