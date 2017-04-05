@@ -14,11 +14,10 @@ def get_id_and_time(file):
         time_stamp = info_list[2]
         return ID, time_stamp
         
-def validate_returning_id(file):
+def validate_returning_id(ID):
         if ID == args:
            return true
         else:
-            else
             return false
     
 
