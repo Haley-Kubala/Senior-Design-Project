@@ -12,16 +12,15 @@ def get_id_and_time(file):
         info_list = line.split(" ")
         ID = info_list[1]
         time_stamp = info_list[2]
-        #return ID, time_stamp
+        return ID, time_stamp
         
 def validate_returning_id(file):
     for ID in searchfile:
         if ID == args:
-            return "VALID ID"
-            return ID, time_stamp
+           return true
         else:
             else
-            return "ID NOT FOUND"
+            return false
     
 
 
