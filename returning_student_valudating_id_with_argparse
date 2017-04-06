@@ -1,8 +1,10 @@
-returningstudent.py
+wtfamidoing.py
 
 import re
 import argparse
 import store
+import pickle
+
 
 def main(args):
     get_id_and_time(file)
@@ -16,26 +18,24 @@ def get_id_and_time(file):
         #split line of data into two and assign each value to a variable
         ID = info_list[1]
         #get the id from args
-
         time_stamp = info_list[2]
         #get the time stamp from args
+        with open('information.pickle', 'w') as f: 
+            pickle.dump([ID, time_stamp], f)
+            #this should save the ID and the time_stamp to a tuple
 
+        #with open('information.pickle') as f: 
+        #ID, time_stamp = pickle.load(f)
         return ID, time_stamp
-        
         
 def validate_returning_id(ID):
            # check the args id
-
         if ID == args:
            return true
            # compare id's
-
-
         else:
             return false
     
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID must match the one in the file")
