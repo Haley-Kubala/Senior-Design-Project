@@ -9,17 +9,27 @@ def main(args):
     validate_returning_id(ID)
     
 def get_id_and_time(file):
+#get the id and timestamp and store it
     with open('file.txt', 'r') as searchfile:
     for line in searchfile:
         info_list = line.split(" ")
+        #split line of data into two and assign each value to a variable
         ID = info_list[1]
+        #get the id from args
+
         time_stamp = info_list[2]
         return ID, time_stamp
+        #get the time stamp from args
         
         
 def validate_returning_id(ID):
+           # check the args id
+
         if ID == args:
            return true
+           # compare id's
+
+
         else:
             return false
     
