@@ -5,7 +5,9 @@ import argparse
 import store
 
 def main(args):
-        
+    get_id_and_time(file)
+    validate_returning_id(ID)
+    
 def get_id_and_time(file):
     with open('file.txt', 'r') as searchfile:
     for line in searchfile:
@@ -13,6 +15,7 @@ def get_id_and_time(file):
         ID = info_list[1]
         time_stamp = info_list[2]
         return ID, time_stamp
+        
         
 def validate_returning_id(ID):
         if ID == args:
