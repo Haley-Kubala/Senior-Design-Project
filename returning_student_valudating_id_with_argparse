@@ -18,8 +18,9 @@ def get_id_and_time(file):
         #get the id from args
 
         time_stamp = info_list[2]
-        return ID, time_stamp
         #get the time stamp from args
+
+        return ID, time_stamp
         
         
 def validate_returning_id(ID):
