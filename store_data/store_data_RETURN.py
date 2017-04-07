@@ -20,6 +20,8 @@ def main(args):
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
 
+def find_id(collection_name):
+    id_entry = collection_name.find_one({'ID' : id},)
 
 
 if __name__ == "__main__":
