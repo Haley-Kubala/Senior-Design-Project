@@ -11,6 +11,11 @@ def main(args):
     validate_returning_id(ID)
     
 def return_id_and_time(file):
+'''returns the ID and timestamp of the file.
+ :param file: takes the file in which the data is stored   
+ :return: the parsed ID and time_stamp
+
+'''
 #get the id and timestamp and store it
     with open('file.txt', 'r') as searchfile:
     for line in searchfile:
@@ -29,6 +34,11 @@ def return_id_and_time(file):
         return ID, time_stamp
         
 def validate_returning_id(ID):
+ '''returns true or false depending on whether or not the ID entered matches the ID in the file.
+   :param ID: takes the ID parsed from the file in the return_id_and_time function.
+   :return: returns true or false
+   
+   '''
            # check the args id
         if ID == args:
            return true
@@ -37,12 +47,15 @@ def validate_returning_id(ID):
             return false
 # print valdiate_returing_id()
 def is_id_trash():
-   
+   '''calls the appropriate script based on whether or not the IDs match.
+   :param ___: takes a 
+   :return: calls appropriate scrip based on the true/false options
+   '''
     if validate_returning_id() == true:
         #call David's script to move forward in the validation process, I think. 
     elif validate_returning_id() == false:
         return "INVALID ID, PLEASE RE-ENTER"
-        #if the script that tests whether the IDs match returns false, this script will prompt the user to re enter ID
+        #if the script that tests whether the IDs match returns false, this function will prompt the user to re enter ID
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
     
