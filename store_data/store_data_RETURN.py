@@ -10,11 +10,16 @@ import mongodb
 import pymongo
 from pymongo import MongoClient
 
+client = MongoClient()
+db = client['STUDENT_INFO']
+collection = db["id-student"]
 
 def main(args):
+
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
+
 
 
 if __name__ == "__main__":
