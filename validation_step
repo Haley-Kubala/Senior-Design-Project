@@ -1,4 +1,4 @@
-wtfamidoing.py
+validation_step.py
 
 import re
 import argparse
@@ -10,7 +10,7 @@ def main(args):
     get_id_and_time(file)
     validate_returning_id(ID)
     
-def get_id_and_time(file):
+def return_id_and_time(file):
 #get the id and timestamp and store it
     with open('file.txt', 'r') as searchfile:
     for line in searchfile:
@@ -32,9 +32,19 @@ def validate_returning_id(ID):
            # check the args id
         if ID == args:
            return true
-           # compare id's
+           # compare ids
         else:
             return false
+# print valdiate_returing_id()
+def is_id_trash():
+   
+    if validate_returning_id() == true:
+        #call David's script to move forward in the validation process, I think. 
+    elif validate_returning_id() == false:
+        return "INVALID ID, PLEASE RE-ENTER"
+        #if the script that tests whether the IDs match returns false, this script will prompt the user to re enter ID
+        #If it does return false, I think this is where it would call one of David's functions
+        #prompting the user to re-enter their ID
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
