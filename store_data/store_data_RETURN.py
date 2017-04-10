@@ -14,14 +14,13 @@ db = client['STUDENT_INFO']
 collection = db["id-student"]
 
 def main(args):
-
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
     find_id(collection)
 
 def find_id(collection_name):
-    id_entry = collection_name.find_one({'ID' : id})
+    id_entry = collection_name.find_one({'ID' : args["ID"]})
     print id_entry
 
 
