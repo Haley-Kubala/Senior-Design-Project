@@ -1,12 +1,11 @@
 #connect to mongo database
 #connect to mongo collection
 #create new document in collection
-#adjust script so it takes ID and Timestamp as args
 import argparse
 import collections
 import datetime
 from datetime import date
-import mongodb
+#import mongodb
 import pymongo
 from pymongo import MongoClient
 
@@ -19,9 +18,11 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
+    find_id(collection)
 
 def find_id(collection_name):
-    id_entry = collection_name.find_one({'ID' : id},)
+    id_entry = collection_name.find_one({'ID' : id})
+    print id_entry
 
 
 if __name__ == "__main__":
