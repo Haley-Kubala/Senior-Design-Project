@@ -3,16 +3,16 @@ validation_step.py
 import re
 import argparse
 import store
-import pickle
+#import pickle
 
 
 def main(args):
     get_id_and_time(file)
     validate_returning_id(ID)
-    
+
 def return_id_and_time(file):
 '''returns the ID and timestamp of the file.
- :param file: takes the file in which the data is stored   
+ :param file: takes the file in which the data is stored
  :return: the parsed ID and time_stamp
 
 '''
@@ -25,19 +25,19 @@ def return_id_and_time(file):
         #get the id from args
         time_stamp = info_list[2]
         #get the time stamp from args
-        with open('information.pickle', 'w') as f: 
-            pickle.dump([ID, time_stamp], f)
+        #with open('information.pickle', 'w') as f:
+            #pickle.dump([ID, time_stamp], f)
             #this should save the ID and the time_stamp to a tuple
 
-        #with open('information.pickle') as f: 
+        #with open('information.pickle') as f:
         #ID, time_stamp = pickle.load(f)
         return ID, time_stamp
-        
+
 def validate_returning_id(ID):
  '''returns true or false depending on whether or not the ID entered matches the ID in the file.
    :param ID: takes the ID parsed from the file in the return_id_and_time function.
    :return: returns true or false
-   
+
    '''
            # check the args id
         if ID == args:
@@ -48,17 +48,17 @@ def validate_returning_id(ID):
 # print valdiate_returing_id()
 def is_id_trash():
    '''calls the appropriate script based on whether or not the IDs match.
-   :param ___: takes a 
+   :param ___: takes a
    :return: calls appropriate scrip based on the true/false options
    '''
     if validate_returning_id() == true:
-        #call David's script to move forward in the validation process, I think. 
+        #call David's script to move forward in the validation process, I think.
     elif validate_returning_id() == false:
         return "INVALID ID, PLEASE RE-ENTER"
         #if the script that tests whether the IDs match returns false, this function will prompt the user to re enter ID
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
-    
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID must match the one in the file")
