@@ -20,8 +20,12 @@ def main(args):
     find_id(collection)
 
 def find_id(collection_name):
+    '''
+    If specified ID is in the collection the find_one function
+    will return it.
+    '''
     id_entry = collection_name.find_one({'ID' : args["ID"]})
-    print id_entry
+    return id_entry
 
 
 if __name__ == "__main__":
