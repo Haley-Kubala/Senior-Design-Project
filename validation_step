@@ -3,12 +3,7 @@ validation_step.py
 import re
 import argparse
 import store
-#import pickle
 
-
-def main(args):
-    get_id_and_time(file)
-    validate_returning_id(ID)
 
 def return_id_and_time(file):
 '''returns the ID and timestamp of the file.
@@ -16,7 +11,6 @@ def return_id_and_time(file):
  :return: the parsed ID and time_stamp
 
 '''
-#get the id and timestamp and store it
     with open('file.txt', 'r') as searchfile:
     for line in searchfile:
         info_list = line.split(" ")
@@ -24,13 +18,7 @@ def return_id_and_time(file):
         ID = info_list[1]
         #get the id from args
         time_stamp = info_list[2]
-        #get the time stamp from args
-        #with open('information.pickle', 'w') as f:
-            #pickle.dump([ID, time_stamp], f)
-            #this should save the ID and the time_stamp to a tuple
-
-        #with open('information.pickle') as f:
-        #ID, time_stamp = pickle.load(f)
+        #get the time stamp from args'
         return ID, time_stamp
 
 def validate_returning_id(ID):
@@ -58,7 +46,10 @@ def is_id_trash():
         #if the script that tests whether the IDs match returns false, this function will prompt the user to re enter ID
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
-
+def main(args):
+    get_id_and_time(file)
+    validate_returning_id(ID)
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID must match the one in the file")
