@@ -46,12 +46,14 @@ def is_id_trash():
         #if the script that tests whether the IDs match returns false, this function will prompt the user to re enter ID
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
-def main(args):
-    get_id_and_time(file)
-    validate_returning_id(ID)
+
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("ID", help="student ID must match the one in the file")
     args = vars(parser.parse_args())
     main(args)
+    
+    def main(args):
+    get_id_and_time(file)
+    validate_returning_id(ID)
