@@ -25,7 +25,7 @@ def document_creation(collection_name):
     '''
     creates a document in a given collection
     '''
-    document = db.collection_name.insert_one({"id": "123"})
+    document = db.collection_name.insert({"id": "123"})
     return document
 
 
