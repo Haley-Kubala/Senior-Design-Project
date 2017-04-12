@@ -18,7 +18,7 @@ def main(args):
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection)):
-        return find_id
+        print find_id
     else:
         print "no document"
 
