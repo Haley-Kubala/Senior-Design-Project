@@ -28,7 +28,7 @@ def find_id(collection_name):
     If specified ID is in the collection the find_one function
     will return it.
     '''
-    id_entry = collection_name.find_one({'ID' : args["ID"]})
+    id_entry = collection_name.find_one({'id' : args["ID"]})
     return id_entry
 
 
