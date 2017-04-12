@@ -11,7 +11,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db = client['STUDENT_INFO']
-collection = db["id-student"]
+collection = db["id_student"]
 
 def main(args):
     end_date_time = datetime.datetime.now()
