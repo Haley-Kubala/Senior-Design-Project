@@ -17,7 +17,17 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    find_id(collection)
+    document_creation(collection)
+    print find_id(collection)
+
+
+def document_creation(collection_name):
+    '''
+    creates a document in a given collection
+    '''
+    document = db.collection_name.insert_one({"id": "123"})
+    return document
+
 
 def find_id(collection_name):
     '''
