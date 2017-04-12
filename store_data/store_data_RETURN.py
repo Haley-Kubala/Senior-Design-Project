@@ -17,7 +17,7 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    document_creation(collection)
+    print document_creation(collection)
     print find_id(collection)
 
 
