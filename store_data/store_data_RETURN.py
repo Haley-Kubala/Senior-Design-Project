@@ -28,6 +28,8 @@ def find_id(collection_name):
     If specified ID is in the collection the find_one function
     will return it.
     '''
+    #check if this is how you find a document also figure out
+    #how to make function understand what args is
     id_entry = collection_name.find_one({'id' : args["ID"]})
     return id_entry
 
