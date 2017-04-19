@@ -17,20 +17,20 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    if(find_id(collection, args["ID"])):
+    if(find_id(collection, ID)):
         print find_id
     else:
         print "no such document"
 
 
-def find_id(collection_name, args):
+def find_id(collection_name, id_arg):
     '''
     If specified ID is in the collection the find_one function
     will return it.
     '''
     #check if this is how you find a document also figure out
     #how to make function understand what args is
-    id_entry = collection_name.find_one({'id' : args["ID"]})
+    id_entry = collection_name.find_one({'id' : id_arg})
     return id_entry
 
 
