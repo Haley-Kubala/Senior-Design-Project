@@ -20,10 +20,10 @@ def main(args):
     if(find_id(collection)):
         print find_id
     else:
-        print "no document"
+        print "no such document"
 
 
-def find_id(collection_name):
+def find_id(collection_name, args):
     '''
     If specified ID is in the collection the find_one function
     will return it.
