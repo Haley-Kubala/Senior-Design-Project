@@ -17,7 +17,7 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    if(find_id(collection)):
+    if(find_id(collection, args["ID"])):
         print find_id
     else:
         print "no such document"
