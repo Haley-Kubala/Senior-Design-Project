@@ -13,16 +13,6 @@ client = MongoClient()
 db = client['STUDENT_INFO']
 collection = db["id_student"]
 
-def main(args):
-    end_date_time = datetime.datetime.now()
-    ID = args["ID"]
-    print ID
-    beginning_timestamp = args["beginning_timestamp"]
-    if(find_id(collection, ID)):
-        print find_id
-    else:
-        print "no such document"
-
 
 def find_id(collection_name, id_arg):
     '''
@@ -33,6 +23,17 @@ def find_id(collection_name, id_arg):
     #how to make function understand what args is
     id_entry = collection_name.find_one({'id' : id_arg})
     return id_entry
+
+
+def main(args):
+    end_date_time = datetime.datetime.now()
+    ID = args["ID"]
+    print ID
+    beginning_timestamp = args["beginning_timestamp"]
+    if(find_id(collection, ID)):
+        print find_id()
+    else:
+        print "no such document"
 
 
 if __name__ == "__main__":
