@@ -23,7 +23,7 @@ def main(args):
         print "no such document"
 
 
-def find_id(collection_name, args["ID"]):
+def find_id(collection_name, args):
     '''
     If specified ID is in the collection the find_one function
     will return it.
