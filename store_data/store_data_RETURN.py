@@ -16,6 +16,7 @@ collection = db["id_student"]
 def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
+    print ID
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
         print find_id
