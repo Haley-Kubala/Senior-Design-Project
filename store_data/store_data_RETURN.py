@@ -31,7 +31,7 @@ def main(args):
     print ID
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
-        print find_id()
+        print find_id(collection, ID)
     else:
         print "no such document"
 
