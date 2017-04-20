@@ -1,11 +1,8 @@
-#connect to mongo database
-#connect to mongo collection
-#create new document in collection
+
 import argparse
 import collections
 import datetime
 from datetime import date
-#import mongodb
 import pymongo
 from pymongo import MongoClient
 
@@ -19,8 +16,6 @@ def find_id(collection_name, id_arg):
     If specified ID is in the collection the find_one function
     will return it.
     '''
-    #check if this is how you find a document also figure out
-    #how to make function understand what args is
     id_entry = collection_name.find_one({'id' : id_arg})
     return id_entry
 
@@ -32,6 +27,7 @@ def main(args):
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
         print find_id(collection, ID)
+        # return true??
     else:
         print "no such document"
 
