@@ -20,6 +20,16 @@ def find_id(collection_name, id_arg):
     return id_entry
 
 
+def store_data(collection_name, id_args, ):
+    '''Takes input from annie's script and creates
+    new mongo document in correct collection.
+    '''
+    document = db.collection_name.insert({"id": "123"},
+                                        {"leave time" : ""},
+                                        {"return time", ""})
+    return document
+
+    
 def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
