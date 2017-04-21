@@ -9,6 +9,7 @@ from pymongo import MongoClient
 client = MongoClient()
 db = client['STUDENT_INFO']
 collection = db["id_student"]
+collection2 = db["student_log"]
 
 
 def find_id(collection_name, id_arg):
@@ -20,13 +21,13 @@ def find_id(collection_name, id_arg):
     return id_entry
 
 
-def store_data(collection_name, id_args, ):
+def store_data(collection_name, id_args, leave_time, return_time):
     '''Takes input from annie's script and creates
     new mongo document in correct collection.
     '''
-    document = db.collection_name.insert({"id": "123"},
-                                        {"leave time" : ""},
-                                        {"return time", ""})
+    document = db.collection_name.insert({"id": id_args},
+                                        {"leave time" : leave_time},
+                                        {"return time", return_time})
     return document
 
 
@@ -36,8 +37,7 @@ def main(args):
     print ID
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
-        store_data(collection, ID)
-        # return true??
+        store_data(collection2, ID, beginning_timestamp, end_date_time)
     else:
         print "no such document"
 
