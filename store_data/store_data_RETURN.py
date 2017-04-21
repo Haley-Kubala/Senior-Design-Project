@@ -29,14 +29,14 @@ def store_data(collection_name, id_args, ):
                                         {"return time", ""})
     return document
 
-    
+
 def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     print ID
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
-        print find_id(collection, ID)
+        store_data(collection, ID)
         # return true??
     else:
         print "no such document"
