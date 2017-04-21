@@ -27,7 +27,7 @@ def store_data(collection_name, id_args, leave_time, return_time):
     '''
     document = db.collection_name.insert({"id": id_args,
                                         "leave_time" : leave_time,
-                                        "return_time" : return_time)}
+                                        "return_time" : return_time})
     return document
 
 
