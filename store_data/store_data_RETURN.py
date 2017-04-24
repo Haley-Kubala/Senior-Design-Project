@@ -25,7 +25,7 @@ def store_data(collection_name, id_args, leave_time, return_time):
     '''Takes input from annie's script and creates
     new mongo document in correct collection.
     '''
-    db.collection_name.insert_one({"id": id_args,
+    db.collection_name.insertOne({"id": id_args,
                                         "leave_time" : leave_time,
                                         "return_time" : return_time})
 
