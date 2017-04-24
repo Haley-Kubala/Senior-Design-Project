@@ -33,7 +33,6 @@ def store_data(collection_name, id_args, leave_time, return_time):
 def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
-    print ID
     beginning_timestamp = args["beginning_timestamp"]
     if(find_id(collection, ID)):
         store_data(collection2, ID, beginning_timestamp, end_date_time)
