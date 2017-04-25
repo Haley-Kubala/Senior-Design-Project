@@ -35,10 +35,10 @@ def main(args):
     end_date_time = datetime.datetime.now()
     ID = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    if(find_id(collection, ID)):
-        store_data(collection2, ID, beginning_timestamp, end_date_time)
-    else:
-        print "no such document"
+    #if(find_id(collection, ID)):
+    store_data(collection2, ID, beginning_timestamp, end_date_time)
+    #else:
+        #print "no such document"
 
 
 if __name__ == "__main__":
