@@ -12,7 +12,7 @@ def return_id_and_time():
 
 '''
     with open('file.txt', 'r') as searchfile:
-        #exchange file.txt with EXact location of file. 
+        #exchange file.txt with EXact location of file.
     for line in searchfile:
         info_list = line.split(" ")
         #split line of data into two and assign each value to a variable
@@ -41,8 +41,11 @@ def is_id_trash(ID):
    :return: calls appropriate scrip based on the true/false options
    '''
    # use regex
-
-    return true
+    if len(ID) == 5 and ID.isdigit():
+        return false
+        #the string is not trash
+    else: 
+        return true
         #if the script that tests whether the IDs match returns false, this function will prompt the user to re enter ID
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
@@ -52,7 +55,7 @@ def main(args):
     if is_id_trash(returningID)
         #call David with error message
         pass
-    
+
     if validate_returning_id(LeaveID, returningID)
         pass
 
