@@ -7,12 +7,11 @@ Questions? how will it write to a file if already exists?
 import argparse
 import datetime
 from datetime import date
-import time
 
 def main(args):
     start_date_time = datetime.datetime.now()
     with open('leave_info_file', 'w') as leave_info_file:
-        leave_info_file.write(" %s , %s "  % (args["ID"], start_date_time))
+        leave_info_file.write("%s %s "  % (args["ID"], start_date_time))
 
 
 
