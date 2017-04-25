@@ -6,6 +6,22 @@ def is_Match(ID):
 #search for a matching ID from mongo database
 #report results
 
+def find_id(collection_name, id_arg):
+    '''
+    If specified ID is in the collection the find_one function
+    will return it.
+    '''
+    id_entry = collection_name.find_one({'id' : id_arg})
+    return id_entry
+
+    
+def find_id(collection_name, id_arg):
+    '''
+    If specified ID is in the collection the find_one function
+    will return it.
+    '''
+    id_entry = collection_name.find_one({'id' : id_arg})
+    return id_entry
 def is_id_trash(ID):
    '''calls the appropriate script based on whether or not the ID passed from David is actually .
    :param ___: takes a
