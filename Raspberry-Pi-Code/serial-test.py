@@ -20,18 +20,19 @@ def main():
 				print read_serial
 				status = c
 			elif (status == c and validateID(read_serial)):
-				print read_serial + " is a valid ID"
+				print "\x1b[0;32m" + read_serial + "\x1b[0m is a valid ID"
 				ser.write("1")
 				status = r
 			elif (status == c and not validateID(read_serial)):
-				print read_serial + " is not a valid ID"
+				print "\x1b[0;31m" + read_serial + "\x1b[0m is not a valid ID"
 				ser.write("0");
 				status = r
 			else:
 				print read_serial
 		else:
-			print "Ignoring \"" + read_serial + "\""
+			print "\x1b[0;31mIgnoring \"" + read_serial + "\"\x1b[0m"
 
+# this is just a placeholder function
 def validateID(idToValidate):
 	if (isinstance(idToValidate, basestring)):
 		if (idToValidate == "77777"):
