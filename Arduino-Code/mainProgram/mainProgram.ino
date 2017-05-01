@@ -223,37 +223,26 @@ void loop(void) {
           Serial.println(sending);
           Serial.println(textfield);
           
-          while (!(Serial.available() > 0)) {
-          input = Serial.read();
-          
-          if (input == 48) { // 48 is ASCII for 0 (zero)
-            status(F("Invalid ID. Try Again."));
-            Serial.println("Invalid ID. Try Again.");
-          }
-          
-          if (input == 49) { // 49 is ASCII for 1 (one)
-            status(F("Approved. Be free."));
-            Serial.println("Approved. Be free.");
-          }
-          }
+          justSent = true;
         }
-        
-        /*if (Serial.available() > 0) {
-          input = Serial.read();
-          
-          if (input == 48) { // 48 is ASCII for 0 (zero)
-            status(F("Invalid ID. Try Again."));
-            Serial.println("Invalid ID. Try Again.");
-          }
-          
-          if (input == 49) { // 49 is ASCII for 1 (one)
-            status(F("Approved. Be free."));
-            Serial.println("Approved. Be free.");
-          }
-        }*/
         
       delay(100); // UI debouncing
     }
+    
+    if (justSent && Serial.available() > 0) {
+      input = Serial.read();
+      
+      if (input == 48) { // 48 is ASCII for 0 (zero)
+        status(F("Invalid ID. Try Again."));
+        Serial.println("Invalid ID. Try Again.");
+        justSent = false;
+      }
+      
+      if (input == 49) { // 49 is ASCII for 1 (one)
+        status(F("Approved. Be free."));
+        Serial.println("Approved. Be free.");
+        justSent = false;
+      }
+    }
   }
-  
 }
