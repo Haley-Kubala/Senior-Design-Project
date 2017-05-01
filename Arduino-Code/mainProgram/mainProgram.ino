@@ -243,6 +243,17 @@ void loop(void) {
         Serial.println("Approved. Be free.");
         justSent = false;
       }
+      
+      for (int i = 0; i < strnlen(textfield, TEXT_LEN); i++) {
+        textfield[i] = 0;
+      }
+      textfield_i = 0;
+      
+      // update the current text field
+      tft.setCursor(TEXT_X + 2, TEXT_Y+10);
+      tft.setTextColor(TEXT_TCOLOR, ILI9341_BLACK);
+      tft.setTextSize(TEXT_TSIZE);
+      tft.print(textfield);
     }
   }
 }
