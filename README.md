@@ -6,7 +6,7 @@ uses the pass. Other features could be added if we have time to do so.
 
 Creators : Haley Kubala, Annie Williamson, David Rohrbaugh
 
-The Device utilizes an arduino, a raspberry pi, and a lcd touch screen.
+The Device utilizes an Arduino, a raspberry pi, and a lcd touch screen.
 We will be 3D printing the case that contains all of the parts.
 
 Software Components : we will need to create a database, preferably a mongo
