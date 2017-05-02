@@ -232,22 +232,30 @@ void loop(void) {
     if (justSent && Serial.available() > 0) {
       input = Serial.read();
       
-      if (input == 48) { // 48 is ASCII for 0 (zero)
-        status(F("Invalid ID. Try Again."));
-        Serial.println("Invalid ID. Try Again.");
-        justSent = false;
-      }
-      
       if (input == 49) { // 49 is ASCII for 1 (one)
-        status(F("Approved. Be free."));
-        Serial.println("Approved. Be free.");
+        status(F("Approved. Be back soon!"));
+        Serial.println("Approved. Be back soon!");
         justSent = false;
       }
       
-      for (int i = 0; i < strnlen(textfield, TEXT_LEN); i++) {
-        textfield[i] = 0;
+      if (!justSent) {
+        for (int i = 0; i < strnlen(textfield, TEXT_LEN); i++) {
+          textfield[i] = 0;
+        }
+        textfield_i = 0;
+        
+        // clear the current text field
+        tft.setCursor(TEXT_X + 2, TEXT_Y+10);
+        tft.setTextColor(TEXT_TCOLOR, ILI9341_BLACK);
+        tft.setTextSize(TEXT_TSIZE);
+        tft.print("       ");
       }
-      textfield_i = 0;
+      
+      if (input == 48) { // 48 is ASCII for 0 (zero)
+        status(F("Invalid ID. Try again."));
+        Serial.println("Invalid ID. Try again.");
+        justSent = false;
+      }
       
       // update the current text field
       tft.setCursor(TEXT_X + 2, TEXT_Y+10);
