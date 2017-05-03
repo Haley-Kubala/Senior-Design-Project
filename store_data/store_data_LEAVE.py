@@ -9,6 +9,10 @@ import datetime
 from datetime import date
 
 def main(args):
+    '''
+    creates the beginning date time stamp
+    then writes information to a file
+    '''
     start_date_time = datetime.datetime.now()
     with open('leave_info_file', 'w') as leave_info_file:
         leave_info_file.write("%s %s "  % (args["ID"], start_date_time))
