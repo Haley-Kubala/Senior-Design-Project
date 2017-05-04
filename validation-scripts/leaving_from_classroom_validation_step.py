@@ -1,8 +1,18 @@
 import argparse
-import regex
+import pymongo
+from pymongo import MongoClient
+client = MongoClient()
+db = client['STUDENT_INFO']
+collection = db["id_student"]
+collection2 = db["student_log"]
 
-#def is_Match(ID):
-#connect to Mongo
+
+def is_Match(ID):
+    if(find_id(collection, enteredID)):
+        return true
+    else
+        print "NO MATCH FOUND"
+#connect to Mongo above
 #search for a matching ID from mongo database
 #report results
 
