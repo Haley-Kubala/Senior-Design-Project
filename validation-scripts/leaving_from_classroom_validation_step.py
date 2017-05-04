@@ -55,7 +55,7 @@ def is_id_trash(ID):
 def main(args):
     enteredID = args['ID']
     #rework
-    if is_id_trash(returningID)
+    if is_id_trash(enteredID)
         #call David with error message
         pass
 
