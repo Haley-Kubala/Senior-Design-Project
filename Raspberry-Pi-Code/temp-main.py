@@ -5,8 +5,13 @@ ser.init()
 
 while(True):
 	ID = ser.readID()
-	print("ID: " + ID)
 	if (len(ID) == 5):
+		print ("ID: " + ID)
+		# eventually the line below
+		# will be replaced by this:
+		# a = confirmID(ID)
 		a = (ID == "77777")
 		print(a)
-		ser.sendConfirmation(a) 
+		ser.sendConfirmation(a)
+	else:
+		print (ID)
