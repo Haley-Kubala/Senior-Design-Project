@@ -51,6 +51,7 @@ def is_id_trash(ID):
         #If it does return false, I think this is where it would call one of David's functions
         #prompting the user to re-enter their ID
 
+        # this is just for testing
 
 def main(args):
     enteredID = args["ID"]
