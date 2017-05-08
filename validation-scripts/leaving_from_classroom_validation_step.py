@@ -7,8 +7,8 @@ collection = db["id_student"]
 collection2 = db["student_log"]
 
 
-def is_Match(ID):
-    if(find_id(collection, enteredID)):
+def is_Match(ID, collection):
+    if(find_id(collection, ID)):
         return true
     else:
         print "NO MATCH FOUND"
@@ -60,7 +60,7 @@ def main(args):
         #call David with error message
         pass
 
-    if is_Match(enteredID)
+    if is_Match(enteredID, collection)
         pass
         #do reporting
 
