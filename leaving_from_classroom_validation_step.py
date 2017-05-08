@@ -1,7 +1,17 @@
 import argparse
-import regex
+import pymongo
+from pymongo import MongoClient
+client = MongoClient()
+db = client['STUDENT_INFO']
+collection = db["id_student"]
+collection2 = db["student_log"]
+
 
 def is_Match(ID):
+    if(find_id(collection, enteredID)):
+    	return true
+    else:
+	print "NO MATCH FOUND"
 #connect to Mongo
 #search for a matching ID from mongo database
 #report results
@@ -28,11 +38,11 @@ def is_id_trash(ID):
    :return: calls appropriate scrip based on the true/false options
    '''
    # use regex
-    if len(ID) == 5 and ID.isdigit():
-        return false
+   if len(ID) == 5 and ID.isdigit():
+        return False
         #the string is not trash
-    else: 
-        return true
+   else: 
+        return True
         #the string is trash
         # will prompt the user to re enter ID
     
@@ -46,11 +56,11 @@ def is_id_trash(ID):
 def main(args):
     enteredID = args['ID']
     #rework
-    if is_id_trash(returningID)
+    if is_id_trash(enteredID):
         #call David with error message
         pass
 
-    if is_Match(enteredID)
+    if is_Match(enteredID):
         pass
         #do reporting
 
