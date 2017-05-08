@@ -10,7 +10,7 @@ collection2 = db["student_log"]
 def is_Match(ID):
     if(find_id(collection, enteredID)):
         return true
-    else
+    else:
         print "NO MATCH FOUND"
 #connect to Mongo above
 #search for a matching ID from mongo database
@@ -53,7 +53,7 @@ def is_id_trash(ID):
 
 
 def main(args):
-    enteredID = args['ID']
+    enteredID = args["ID"]
     #rework
     if is_id_trash(enteredID)
         #call David with error message
