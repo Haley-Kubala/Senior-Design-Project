@@ -84,6 +84,7 @@ uint16_t buttoncolors[15] = {ILI9341_DARKGREEN, ILI9341_BLACK, ILI9341_RED,
 char sending[16] = "sending data...";
 int input;
 boolean justSent = false;
+boolean locked = false;
 
 void setup(void) {
   Serial.begin(9600);
@@ -213,9 +214,11 @@ void loop(void) {
         tft.setTextSize(TEXT_TSIZE);
         tft.print(textfield);
 
-        // TODO extra button
+        // TODO lock button
         if (b == 1) {
           status(F("Locked"));
+          if (locked) locked = false;
+          else if (!locked) locked = true;
         }
         
         if (b == 0) {
