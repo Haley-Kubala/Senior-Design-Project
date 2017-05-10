@@ -47,6 +47,7 @@ def store_data(collection_name, id_args, leave_time, return_time):
                                 "return_time" : return_time})
     #duz check
     #return boolian for rizzult
+    #write result??
 
 
 def main(args):
