@@ -12,14 +12,14 @@ def sendConfirmation(confirm):
                 init()
         if (isinstance(confirm, bool)):
                 if (confirm):
-                        ser.write("1")
-                else:
                         ser.write("0")
+                else:
+                        ser.write("1")
         elif (isinstance(confirm, int)):
                 if (confirm == 1):
-                        ser.write("1")
-                else:
                         ser.write("0")
+                else:
+                        ser.write("1")
 
 def readID():
         if (not(ini)):
