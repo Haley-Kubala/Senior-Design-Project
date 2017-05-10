@@ -9,7 +9,8 @@ collection2 = db["student_log"]
 
 def is_Match(ID, collection):
     if(find_id(collection, ID)):
-        return true
+        #return true
+        print "ID FOUND"
     else:
         print "NO MATCH FOUND"
 #connect to Mongo above
