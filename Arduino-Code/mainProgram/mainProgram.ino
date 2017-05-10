@@ -74,7 +74,7 @@ TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
 
 Adafruit_GFX_Button buttons[15];
 /* create 15 buttons, in classic candybar phone style */
-char buttonlabels[15][5] = {"Go", "Lock", "Del", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#" };
+char buttonlabels[15][7] = {"Go", "Unlock", "Del", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#" };
 uint16_t buttoncolors[15] = {ILI9341_DARKGREEN, ILI9341_BLACK, ILI9341_RED, 
                              ILI9341_BLUE, ILI9341_BLUE, ILI9341_BLUE, 
                              ILI9341_BLUE, ILI9341_BLUE, ILI9341_BLUE, 
@@ -216,9 +216,27 @@ void loop(void) {
 
         // TODO lock button
         if (b == 1) {
-          status(F("Locked"));
-          if (locked) locked = false;
-          else if (!locked) locked = true;
+          if (locked) {
+            locked = false;
+            status(F("Unlocked"));
+            buttonlabels[1][0] = 'L';
+            buttonlabels[1][1] = 'o';
+            buttonlabels[1][2] = 'c';
+            buttonlabels[1][3] = 'k';
+            buttonlabels[1][4] = ' ';
+            buttonlabels[1][5] = ' ';
+          } else if (!locked) {
+            locked = true;
+            status(F("Locked"));
+            buttonlabels[1][0] = 'U';
+            buttonlabels[1][1] = 'n';
+            buttonlabels[1][2] = 'l';
+            buttonlabels[1][3] = 'o';
+            buttonlabels[1][4] = 'c';
+            buttonlabels[1][5] = 'k';
+          }
+          buttons[b].drawButton();
+          Serial.println(buttonlabels[1][0]);
         }
         
         if (b == 0) {
@@ -235,7 +253,7 @@ void loop(void) {
     if (justSent && Serial.available() > 0) {
       input = Serial.read();
       
-      if (input == 49) { // 49 is ASCII for 1 (one)
+      if (input == 48) { // 48 is ASCII for 0 (zero)
         status(F("Approved. Be back soon!"));
         Serial.println("Approved. Be back soon!");
         justSent = false;
@@ -254,7 +272,7 @@ void loop(void) {
         tft.print("       ");
       }
       
-      if (input == 48) { // 48 is ASCII for 0 (zero)
+      if (input == 49) { // 49 is ASCII for 1 (one)
         status(F("Invalid ID. Try again."));
         Serial.println("Invalid ID. Try again.");
         justSent = false;
