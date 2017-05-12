@@ -11,6 +11,7 @@ db = client['STUDENT_INFO']
 collection = db["id_student"]
 collection2 = db["student_log"]
 
+#add exception is it fails to connect to mongo
 
 def find_id(collection_name, id_arg):
     '''
@@ -40,9 +41,13 @@ def store_data(collection_name, id_args, leave_time, return_time):
     :param return_time: this is the datetime object that we generate in this script
     :return: this returns nothing and is just a mongo command
     '''
+    #what duz dis do when da mongo-man fails ta caught da shit?
     collection_name.insert({"id": id_args,
                                 "leave_time" : leave_time,
                                 "return_time" : return_time})
+    #duz check
+    #return boolian for rizzult
+    #write result??
 
 
 def main(args):
@@ -56,8 +61,9 @@ def main(args):
     end_date_time = datetime.datetime.now()
     student_id = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    store_data(collection2, student_id, beginning_timestamp, end_date_time)
-
+    if store_data(collection2, student_id, beginning_timestamp, end_date_time):
+        return 0
+    return 1
 
 
 if __name__ == "__main__":
