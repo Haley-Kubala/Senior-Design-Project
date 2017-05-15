@@ -44,7 +44,7 @@ def store_data(collection_name, id_args, leave_time, return_time):
     #write result??
 
 
-def write_to_csv(collection):
+def write_to_csv(collection, ID):
     queries = find_one(collection, ID);
     with open('mongo_queries.csv', 'w') as csv_file:
         field_names = ["id", "student_info"]
@@ -67,7 +67,7 @@ def main(args):
     end_date_time = datetime.datetime.now()
     student_id = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    write_to_csv(collection2)
+    write_to_csv(collection2, args["ID"])
     if store_data(collection2, student_id, beginning_timestamp, end_date_time):
         return 0
         #call write to csv file
