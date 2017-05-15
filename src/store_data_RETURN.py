@@ -48,7 +48,7 @@ def write_to_csv(collection, ID):
     queries = find_id(collection, ID);
     with open('mongo_queries.csv', 'w') as csv_file:
         field_names = ["id", "student_info"]
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer = csv.DictWriter(csv_file, fieldnames=field_names)
         for document in queries:
             write.writerow(document)
 
