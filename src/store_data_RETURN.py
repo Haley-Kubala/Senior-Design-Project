@@ -45,7 +45,7 @@ def store_data(collection_name, id_args, leave_time, return_time):
 
 
 def write_to_csv(collection, ID):
-    queries = find_one(collection, ID);
+    queries = find_id(collection, ID);
     with open('mongo_queries.csv', 'w') as csv_file:
         field_names = ["id", "student_info"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
