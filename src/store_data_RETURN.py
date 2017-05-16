@@ -66,7 +66,7 @@ def main(args):
     end_date_time = datetime.datetime.now()
     student_id = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
-    write_to_csv(collection2, args["ID"])
+    #write_to_csv(collection2, args["ID"])
     if store_data(collection2, student_id, beginning_timestamp, end_date_time):
         return 0
         #call write to csv file
