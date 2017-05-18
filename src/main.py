@@ -10,7 +10,7 @@ while(True):
 		# eventually the line below
 		# will be replaced by this:
 		# a = confirmID(ID)
-		a = (ID == "77777")
+		a = (ID == "77777") or (ID == "11111")
 		print(a)
 		ser.sendConfirmation(a)
 	else:
