@@ -11,8 +11,10 @@ def is_Match(ID, collection):
     if(find_id(collection, ID)):
         #return true
         print "ID FOUND"
+	return True
     else:
         print "NO MATCH FOUND"
+	return False
 #connect to Mongo above
 #search for a matching ID from mongo database
 #report results
@@ -41,10 +43,10 @@ def is_id_trash(ID):
    :return: calls appropriate scrip based on the true/false options
    '''
    # use regex
-    if len(ID) == 5 and ID.isdigit():
+   if len(ID) == 5 and ID.isdigit():
         return false
         #the string is not trash
-    else:
+   else:
         return true
         #the string is trash
         # will prompt the user to re enter ID
@@ -57,11 +59,11 @@ def is_id_trash(ID):
 def main(args):
     enteredID = args["ID"]
     #rework
-    if is_id_trash(enteredID)
+    if is_id_trash(enteredID):
         #call David with error message
         pass
 
-    if is_Match(enteredID, collection)
+    if is_Match(enteredID, collection):
         pass
         #do reporting
 
