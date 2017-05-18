@@ -1,17 +1,11 @@
-
 import argparse
 import collections
+import csv
 import datetime
 from datetime import date
 import pymongo
 from pymongo import MongoClient
 
-client = MongoClient()
-db = client['STUDENT_INFO']
-collection = db["id_student"]
-collection2 = db["student_log"]
-
-#add exception is it fails to connect to mongo
 
 def find_id(collection_name, id_arg):
     '''
@@ -50,6 +44,14 @@ def store_data(collection_name, id_args, leave_time, return_time):
     #write result??
 
 
+def write_to_csv(collection):
+    queries = find_one(collection, ID);
+    with open('mongo_queries.csv', 'w') as csv_file:
+        field-names = ["id" : "student_info"]
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        for document in queries:
+            write.writerow(document)
+
 def main(args):
     '''
     Main creates the return time and then calls the store_data() function
@@ -58,11 +60,16 @@ def main(args):
     :param args: args["ID"] and args["beginning_timestamp"]
     :return: this returns nothing it just runs the store_data() function
     '''
+    client = MongoClient()
+    db = client['STUDENT_INFO']
+    collection = db["id_student"]
+    collection2 = db["student_log"]
     end_date_time = datetime.datetime.now()
     student_id = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
     if store_data(collection2, student_id, beginning_timestamp, end_date_time):
         return 0
+        #call write to csv file
     return 1
 
 
