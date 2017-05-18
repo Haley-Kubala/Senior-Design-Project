@@ -44,14 +44,13 @@ def store_data(collection_name, id_args, leave_time, return_time):
     #write result??
 
 
-def write_to_csv(collection):
-    queries = find_one(collection, ID);
+def write_to_csv(collection, ID):
+    queries = find_id(collection, ID);
+    print queries
     with open('mongo_queries.csv', 'w') as csv_file:
-        field-names = ["id" : "student_info"]
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        for document in queries:
-            write.writerow(document)
-
+        field_names = ["u'_id'", "u'leave_time'", "u'id'", "u'return_time'"]
+        writer = csv.DictWriter(csv_file, fieldnames=field_names)
+        writer.writerow(queries)
 def main(args):
     '''
     Main creates the return time and then calls the store_data() function
@@ -67,6 +66,7 @@ def main(args):
     end_date_time = datetime.datetime.now()
     student_id = args["ID"]
     beginning_timestamp = args["beginning_timestamp"]
+    #write_to_csv(collection2, args["ID"])
     if store_data(collection2, student_id, beginning_timestamp, end_date_time):
         return 0
         #call write to csv file
